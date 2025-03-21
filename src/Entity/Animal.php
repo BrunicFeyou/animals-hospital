@@ -18,11 +18,11 @@ use ApiPlatform\Metadata\Delete;
 
 #[ApiResource(
     operations: [
-        new GetCollection(security: "is_granted('ROLE_VETERINIAN', 'ROLE_ASSISTANT' )", securityMessage: 'You are not allowed to get animals'),
+        new GetCollection(security: "is_granted('ROLE_VETERINARIAN', 'ROLE_ASSISTANT' )", securityMessage: 'You are not allowed to get animals'),
         new Post(security: "is_granted('ROLE_ASSISTANT')", securityMessage: 'You are not allowed to add animals'),
-        new Get(security: "is_granted('ROLE_VETERINIAN', 'ROLE_ASSISTANT')", securityMessage: 'You are not allowed to get this animal'),
-        new Patch(security: "is_granted('ROLE_VETERINIAN', 'ROLE_ASSISTANT')", securityMessage: 'You are not allowed to update this animal'),
-        new Delete(security: "is_granted('ROLE_VETERINIAN', 'ROLE_ASSISTANT')", securityMessage: 'You are not allowed to delete this animal'),
+        new Get(security: "is_granted('ROLE_VETERINARIAN', 'ROLE_ASSISTANT')", securityMessage: 'You are not allowed to get this animal'),
+        new Patch(security: "is_granted('ROLE_VETERINARIAN', 'ROLE_ASSISTANT')", securityMessage: 'You are not allowed to update this animal'),
+        new Delete(security: "is_granted('ROLE_VETERINARIAN', 'ROLE_ASSISTANT')", securityMessage: 'You are not allowed to delete this animal'),
     ]
 )]
 #[ORM\Entity(repositoryClass: AnimalRepository::class)]

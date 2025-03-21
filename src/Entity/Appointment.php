@@ -19,11 +19,11 @@ use ApiPlatform\Metadata\Delete;
 
 #[ApiResource(
     operations: [
-        new GetCollection(security: "is_granted('ROLE_VETERINIAN')", securityMessage: 'You are not allowed to get appointments'),
-        new Post(security: "is_granted('ROLE_ASSISTANT', 'ROLE_VETERINIAN')", securityMessage: 'You are not allowed to add appointments'),
-        new Get(security: "is_granted('ROLE_VETERINIAN')", securityMessage: 'You are not allowed to get this appointment'),
-        new Patch(security: "is_granted('ROLE_VETERINIAN')", securityMessage: 'You are not allowed to update this appointment'),
-        new Delete(security: "is_granted('ROLE_VETERINIAN')", securityMessage: 'You are not allowed to delete this appointment'),
+        new GetCollection(security: "is_granted('ROLE_VETERINARIAN')", securityMessage: 'You are not allowed to get appointments'),
+        new Post(security: "is_granted('ROLE_ASSISTANT', 'ROLE_VETERINARIAN')", securityMessage: 'You are not allowed to add appointments'),
+        new Get(security: "is_granted('ROLE_VETERINARIAN')", securityMessage: 'You are not allowed to get this appointment'),
+        new Patch(security: "is_granted('ROLE_VETERINARIAN')", securityMessage: 'You are not allowed to update this appointment'),
+        new Delete(security: "is_granted('ROLE_VETERINARIAN')", securityMessage: 'You are not allowed to delete this appointment'),
     ]
 )]
 #[ORM\Entity(repositoryClass: AppointmentRepository::class)]
