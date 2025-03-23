@@ -1,15 +1,13 @@
 <?php
 
-namespace App\State;
+namespace App\Services;
 
-use stdClass;
-use App\Entity\User;
 use ApiPlatform\Metadata\Operation;
 use Doctrine\ORM\EntityManagerInterface;
 use ApiPlatform\State\ProcessorInterface;
 use Symfony\Bundle\SecurityBundle\Security;
 
-class UserRoleChangeCheckerProcessor implements ProcessorInterface
+class UserRoleChangeService implements ProcessorInterface
 {
     private Security $security;
     private EntityManagerInterface $entityManager;
@@ -39,12 +37,10 @@ class UserRoleChangeCheckerProcessor implements ProcessorInterface
         
         $newRoles = $data->getRoles();
 
-        // If roles are being changed
         if ($originalRoles !== $newRoles && !in_array('ROLE_DIRECTOR', $currentUser->getRoles())) {
             throw new \Exception('Only directors can change roles.');
         }
 
-        // Pass the data to the next processor
         return $data;
     }
 }

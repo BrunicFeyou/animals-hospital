@@ -16,7 +16,7 @@ use ApiPlatform\Metadata\Get;
 use ApiPlatform\Metadata\Post;
 use ApiPlatform\Metadata\Patch;
 use ApiPlatform\Metadata\Delete;
-use App\State\PatchUserProcessor;
+use App\State\UpdateUserProcessor;
 use App\State\UserPasswordHasherProcessor;
 
 #[ApiResource(
@@ -25,7 +25,7 @@ use App\State\UserPasswordHasherProcessor;
         new GetCollection(security: "is_granted('ROLE_DIRECTOR')", securityMessage: 'You are not allowed to get users'),
         new Post(security: "is_granted('ROLE_DIRECTOR')", securityMessage: 'You are not allowed to add users', processor: UserPasswordHasherProcessor::class),
         new Get(security: "is_granted('ROLE_DIRECTOR') or object == user", securityMessage: 'You are not allowed to get this user'),
-        new Patch(security: "is_granted('ROLE_DIRECTOR') or object == user", securityMessage: 'You are not allowed to update this user', processor: PatchUserProcessor::class),
+        new Patch(security: "is_granted('ROLE_DIRECTOR') or object == user", securityMessage: 'You are not allowed to update this user', processor: UpdateUserProcessor::class),
         new Delete(security: "is_granted('ROLE_DIRECTOR')", securityMessage: 'You are not allowed to delete this user'),
     ],
     normalizationContext: ['groups' => ['read']],
