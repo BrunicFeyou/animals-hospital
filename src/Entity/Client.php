@@ -9,9 +9,26 @@ use Doctrine\Common\Collections\ArrayCollection;
 use ApiPlatform\Metadata\ApiResource;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Serializer\Attribute\Groups;
+use ApiPlatform\Metadata\GetCollection;
+use ApiPlatform\Metadata\Get;
+use ApiPlatform\Metadata\Post;
+use ApiPlatform\Metadata\Patch;
+use ApiPlatform\Metadata\Delete;
 
 
-#[ApiResource()]
+#[ApiResource(
+    forceEager: false,
+    operations: [
+        new GetCollection(security: "is_granted('ROLE_VETERINARIAN') or is_granted('ROLE_ASSISTANT') or is_granted('ROLE_DIRECTOR')", securityMessage: 'You are not allowed to get users'),
+        new Post(security: "is_granted('ROLE_VETERINARIAN') or is_granted('ROLE_ASSISTANT') or is_granted('ROLE_DIRECTOR')", securityMessage: 'You are not allowed to add clients'),
+        new Get(security: "is_granted('ROLE_VETERINARIAN') or is_granted('ROLE_ASSISTANT') or is_granted('ROLE_DIRECTOR')", securityMessage: 'You are not allowed to get this client'),
+        new Patch(security: "is_granted('ROLE_VETERINARIAN') or is_granted('ROLE_ASSISTANT') or is_granted('ROLE_DIRECTOR')", securityMessage: 'You are not allowed to update this client'),
+        new Delete(security: "is_granted('ROLE_VETERINARIAN') or is_granted('ROLE_ASSISTANT') or is_granted('ROLE_DIRECTOR')", securityMessage: 'You are not allowed to delete this client'),
+    ],
+    normalizationContext: ['groups' => ['read']],
+    denormalizationContext: ['groups' => ['write']]
+)]
 #[ORM\Entity(repositoryClass: ClientRepository::class)]
 #[UniqueEntity('fullname')]
 class Client
@@ -19,16 +36,19 @@ class Client
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups('read')]
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
     #[Assert\NotBlank]
+    #[Groups(['read', 'write'])]
     private ?string $fullname = null;
 
      /**
      * @var Collection<int, Animal>
      */
     #[ORM\OneToMany(targetEntity: Animal::class, mappedBy: 'owner')]
+    #[Groups(['read', 'write'])]
     private Collection $animals;
 
     public function __construct()

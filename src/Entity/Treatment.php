@@ -17,13 +17,16 @@ use Symfony\Component\Serializer\Attribute\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
 
 #[ApiResource(
+    forceEager: false,
     operations: [
         new GetCollection(security: "is_granted('ROLE_VETERINARIAN')", securityMessage: 'You are not allowed to get treatments'),
         new Post(security: "is_granted('ROLE_VETERINARIAN')", securityMessage: 'You are not allowed to add treatments'),
         new Get(security: "is_granted('ROLE_VETERINARIAN')", securityMessage: 'You are not allowed to get this treatment'),
         new Patch(security: "is_granted('ROLE_VETERINARIAN')", securityMessage: 'You are not allowed to update this treatments'),
         new Delete(security: "is_granted('ROLE_VETERINARIAN')", securityMessage: 'You are not allowed to delete this treatments'),
-    ]
+    ],
+    normalizationContext: ['groups' => ['read']],
+    denormalizationContext: ['groups' => ['write']]
 )]
 #[ORM\Entity(repositoryClass: TreatmentRepository::class)]
 class Treatment

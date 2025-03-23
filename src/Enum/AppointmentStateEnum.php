@@ -15,7 +15,12 @@ enum AppointmentStateEnum: string
                 return $status->name;
             }
         }
-        throw new \ValueError("$value is not a valid backing value for enum " . self::class );
+        throw new \ValueError("$value is not a valid backing value for enum " . self::class . ". The expected values are " . implode(", ", self::values() ));
+    }
+
+    public static function values(): array
+    {
+       return array_column(self::cases(), 'value');
     }
 }
 

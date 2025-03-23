@@ -10,21 +10,29 @@ use ApiPlatform\Metadata\GetCollection;
 use App\Repository\AppointmentRepository;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\ArrayCollection;
+use Exception;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Serializer\Attribute\Groups;
 use ApiPlatform\Metadata\Get;
 use ApiPlatform\Metadata\Post;
 use ApiPlatform\Metadata\Patch;
 use ApiPlatform\Metadata\Delete;
+use App\State\UpdateAppointmentProcessor;
+use ApiPlatform\Metadata\ApiFilter;
+use ApiPlatform\Doctrine\Orm\Filter\DateFilter;
 
+#[ApiFilter(DateFilter::class, properties: ['appointmentDate'])]
 #[ApiResource(
+    forceEager: false,
     operations: [
-        new GetCollection(security: "is_granted('ROLE_VETERINARIAN')", securityMessage: 'You are not allowed to get appointments'),
-        new Post(security: "is_granted('ROLE_ASSISTANT', 'ROLE_VETERINARIAN')", securityMessage: 'You are not allowed to add appointments'),
-        new Get(security: "is_granted('ROLE_VETERINARIAN')", securityMessage: 'You are not allowed to get this appointment'),
-        new Patch(security: "is_granted('ROLE_VETERINARIAN')", securityMessage: 'You are not allowed to update this appointment'),
+        new GetCollection(security: "is_granted('ROLE_VETERINARIAN') or is_granted('ROLE_ASSISTANT') or is_granted('ROLE_DIRECTOR')", securityMessage: 'You are not allowed to get appointments'),
+        new Post(security: "is_granted('ROLE_ASSISTANT')", securityMessage: 'You are not allowed to add appointments'),
+        new Get(security: "is_granted('ROLE_VETERINARIAN') or is_granted('ROLE_ASSISTANT')", securityMessage: 'You are not allowed to get this appointment'),
+        new Patch(security: "is_granted('ROLE_VETERINARIAN') or is_granted('ROLE_ASSISTANT')", securityMessage: 'You are not allowed to update this appointment', processor: UpdateAppointmentProcessor::class),
         new Delete(security: "is_granted('ROLE_VETERINARIAN')", securityMessage: 'You are not allowed to delete this appointment'),
-    ]
+    ],
+    normalizationContext: ['groups' => ['read']],
+    denormalizationContext: ['groups' => ['write']]
 )]
 #[ORM\Entity(repositoryClass: AppointmentRepository::class)]
 class Appointment
@@ -72,6 +80,10 @@ class Appointment
      */
     #[ORM\ManyToMany(targetEntity: Treatment::class, inversedBy: 'appointments')]
     private Collection $treatments;
+
+    #[ORM\Column]
+    #[Groups(['read', 'write'])]
+    private ?bool $paymentStatus = false;
 
     public function __construct()
     {
@@ -143,10 +155,6 @@ class Appointment
     public function setVeterinary(?User $veterinary): static
     {
         $this->veterinary = $veterinary;
-        if(!in_array('ROLE_VETERINARIAN', $this->veterinary->getRoles())) {
-            $name = $this->veterinary->getName();
-            throw new \ValueError("$name is not a a user with ROLE_VETERINARIAN. Their roles are " . implode(", ", $this->veterinary->getRoles()));
-        }
 
         return $this;
     }
@@ -202,6 +210,22 @@ class Appointment
     public function removeTreatment(Treatment $treatment): static
     {
         $this->treatments->removeElement($treatment);
+
+        return $this;
+    }
+
+    public function isPaymentStatus(): ?bool
+    {
+        return $this->paymentStatus;
+    }
+
+    public function setPaymentStatus(bool $paymentStatus): static
+    {
+        $this->paymentStatus = $paymentStatus ?? false;
+
+        if($this->paymentStatus != true && $this->state == AppointmentStateEnum::done->name){
+            throw new \ValueError('This appointment cannot be marked as done unless it has been paid');
+        }
 
         return $this;
     }

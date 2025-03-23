@@ -16,16 +16,20 @@ use ApiPlatform\Metadata\Get;
 use ApiPlatform\Metadata\Post;
 use ApiPlatform\Metadata\Patch;
 use ApiPlatform\Metadata\Delete;
+use App\State\PatchUserProcessor;
 use App\State\UserPasswordHasherProcessor;
 
 #[ApiResource(
+    forceEager: false,
     operations: [
         new GetCollection(security: "is_granted('ROLE_DIRECTOR')", securityMessage: 'You are not allowed to get users'),
         new Post(security: "is_granted('ROLE_DIRECTOR')", securityMessage: 'You are not allowed to add users', processor: UserPasswordHasherProcessor::class),
-        new Get(security: "is_granted('ROLE_DIRECTOR')", securityMessage: 'You are not allowed to get this user'),
-        new Patch(security: "is_granted('ROLE_DIRECTOR')", securityMessage: 'You are not allowed to update this user', processor: UserPasswordHasherProcessor::class),
+        new Get(security: "is_granted('ROLE_DIRECTOR') or object == user", securityMessage: 'You are not allowed to get this user'),
+        new Patch(security: "is_granted('ROLE_DIRECTOR') or object == user", securityMessage: 'You are not allowed to update this user', processor: PatchUserProcessor::class),
         new Delete(security: "is_granted('ROLE_DIRECTOR')", securityMessage: 'You are not allowed to delete this user'),
-    ]
+    ],
+    normalizationContext: ['groups' => ['read']],
+    denormalizationContext: ['groups' => ['write']]
 )]
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[ORM\Table(name: '`user`')]
@@ -56,6 +60,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[Groups('read')]
     private ?string $password = null;
 
+    #[Groups(groups: 'write')]
     private ?string $plainPassword = null;
 
     #[ORM\Column(length: 255)]
