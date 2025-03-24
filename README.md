@@ -15,6 +15,7 @@ Pour mettre en place ce projet, veuillez suivre les étapes suivantes :
     - `php bin/console d:d:c` - cela créera une base de données PHPMyAdmin appelée 'Animal_hospital' ; si vous souhaitez utiliser une autre base de données, veuillez modifier le .env
     - `php bin/console make:migration`
     - `php bin/console doctrine:migrations:migrate`
+    - `php bin/console lexik:jwt:generate-keypair`
     - `symfony serve`
 4. Remplacer les {BASE_URL} des requêtes Postman (dans l'url et les body) avec l'url de votre application
 
@@ -89,7 +90,7 @@ Dans l'onglet Authorization, ajoutez le token précédemment obtenu, puis rempli
 - `description` : optionnel, sous format d'une string
 - `price` : obligatoire, sous format d'un float
 - `duration` : obligatoire, sous format d'une string
-- `appointments` : optionnel, sous format d'une relation vers une ressource présente dans la table Appointment
+- `appointments` : optionnel, sous format d'un tableau de relations vers des ressources présentes dans la table Appointment
 
 ## Informations supplémentaires
 

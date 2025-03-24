@@ -1,464 +1,1214 @@
 {
 	"info": {
-		"_postman_id": "9db2b449-7dbd-47d2-9212-97b9092bc921",
+		"_postman_id": "c0980803-b8bc-496d-8544-c4b24b97125c",
 		"name": "Animal_hospital",
+		"description": "Collection postman du groupe composé de Brunic Feyou & Aurore Dimech, pour la matière Architecture API - A3 CDI IIM Digital School",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "43239918"
+		"_exporter_id": "38222397"
 	},
 	"item": [
 		{
-			"name": "Get all animals",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "https://127.0.0.1:8000/api/animals",
-					"protocol": "https",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"animals"
-					]
+			"name": "Animals",
+			"item": [
+				{
+					"name": "Get Animals",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NDI2NTU1MzcsImV4cCI6MTc0MjY1OTEzNywicm9sZXMiOlsiUk9MRV9BU1NJU1RBTlQiLCJST0xFX1VTRVIiXSwidXNlcm5hbWUiOiJhc3Npc3RhbnRAZW1haWwuZnIiLCJzdXJuYW1lIjoiYXNzaXN0YW50In0.KwMsxUBXONiYcD9OwdZjCcaVNMWCLTJPU_ldm5y4YS4qY-tcCZFWBGSUQ59EcqCiH5W6CBnTVqoAIgo-8LiUjS4YcIHa0z3ZFtpIUtAlYcoBuJQdgkd-3JIr8ozfVNdFUz0WGDgjZoY0EhXe9fhqwaMGauGka0_CpZvIwYvVGaaCYLXvCOZoaUvnvQJa6eyI3-l6uJ7daVfQYblgWULSfEZN6jEMj2rOBUHI83_2qzdSFwUhtTCwiBzCouXEWafpkweT9zryWnVmkubWvzDIhkSQwhxseIwqBmgI3nxDLYue8DGzI0eSUZb0ejJ1omc8Td_3wbAlAerH4AZRO3ahdg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{BASE_URL}/api/animals",
+							"host": [
+								"{BASE_URL}"
+							],
+							"path": [
+								"api",
+								"animals"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Animal",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NDI4MDU3NjYsImV4cCI6MTc0MjgwOTM2Niwicm9sZXMiOlsiUk9MRV9BU1NJU1RBTlQiLCJST0xFX1VTRVIiXSwidXNlcm5hbWUiOiJhc3Npc3RhbnRAZW1haWwuZnIiLCJzdXJuYW1lIjoiYXNzaXN0YW50In0.Sqe09r1Z4bkXCZQgNkwrDzwDSyz8mgPQE6KfILT-BDt7ViB7b3_G6bZU6iqaPgSvP0G06ha0jaZJowoW13hy6Tyw2zA5MUl4b7gBZHf05Ljm9b3vnfhCYLMEjocGPJv_cbsbu4_tfLZf2e_pkcEYHtAX-xwNc5XQVlSosczjEbvqZG7SvMyW_bzIl9KyomKWbvzApQH4PD2MpLPijDtnC7PTxEfNWhKCq3UVjHkCqkxtrYmVE_obrgpMoV5JKkWWa1jtms5nLWYw4Mlgfe3-z49Dv9CFGeahsNEL3TmdugF_sxUDkm-8lQLgCEKMBsEAL7WWe6mUa-5gU13x1ukeKQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{BASE_URL}/api/animals/1",
+							"host": [
+								"{BASE_URL}"
+							],
+							"path": [
+								"api",
+								"animals",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Animal",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NDI4MDUyNzgsImV4cCI6MTc0MjgwODg3OCwicm9sZXMiOlsiUk9MRV9BU1NJU1RBTlQiLCJST0xFX1VTRVIiXSwidXNlcm5hbWUiOiJhc3Npc3RhbnRAZW1haWwuZnIiLCJzdXJuYW1lIjoiYXNzaXN0YW50In0.Y_rjsTom8dvJrRFWR46vRD36zbGezOONIeE42jCCh0WNYUN54l15y9kGzTpXrNQfUD-LanAgG2QCrfhJynAPpL6MbUHLgD87wI8kPZWlC6t12chwVALtthFblM-VABLybfbQ5m354hAcz3wlRMgYONDXqPYRicu4Wz7eWEhRBEDZk-GYhGQM_cc5wdXyiihwbPLbu5iLHv2mdJy54ze3xxCMkzqcO0pSC2oY1-rz6gdFZVSPaLm8vdwC9BbU6VEzj3RdqAEMD3B1xvfDGDmY-P6h1G1OEpF87VRUEcSfGzvLEYuCGQAKq2mqLNqSIps8eBjjGf_OvbZTJ4S6ailZXA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Animal 1\",\n  \"race\": \"Chat Européen\",\n  \"birthDate\": \"2024-03-21T11:25:52.227Z\",\n  \"owner\": \"/api/clients/1\",\n  \"picture\": \"/api/media/1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{BASE_URL}/api/animals",
+							"host": [
+								"{BASE_URL}"
+							],
+							"path": [
+								"api",
+								"animals"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Animal",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NDI4MDU3NjYsImV4cCI6MTc0MjgwOTM2Niwicm9sZXMiOlsiUk9MRV9BU1NJU1RBTlQiLCJST0xFX1VTRVIiXSwidXNlcm5hbWUiOiJhc3Npc3RhbnRAZW1haWwuZnIiLCJzdXJuYW1lIjoiYXNzaXN0YW50In0.Sqe09r1Z4bkXCZQgNkwrDzwDSyz8mgPQE6KfILT-BDt7ViB7b3_G6bZU6iqaPgSvP0G06ha0jaZJowoW13hy6Tyw2zA5MUl4b7gBZHf05Ljm9b3vnfhCYLMEjocGPJv_cbsbu4_tfLZf2e_pkcEYHtAX-xwNc5XQVlSosczjEbvqZG7SvMyW_bzIl9KyomKWbvzApQH4PD2MpLPijDtnC7PTxEfNWhKCq3UVjHkCqkxtrYmVE_obrgpMoV5JKkWWa1jtms5nLWYw4Mlgfe3-z49Dv9CFGeahsNEL3TmdugF_sxUDkm-8lQLgCEKMBsEAL7WWe6mUa-5gU13x1ukeKQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/merge-patch+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"string\",\n  \"race\": \"string\",\n  \"birthDate\": \"2025-03-21T11:25:52.227Z\",\n  \"picture\": \"https://example.com/\",\n  \"owner\": \"https://example.com/\",\n  \"appointments\": [\n    \"https://example.com/\"\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{BASE_URL}/api/animals/1",
+							"host": [
+								"{BASE_URL}"
+							],
+							"path": [
+								"api",
+								"animals",
+								"1"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			],
+			"description": "Actions liées à la table Animal"
 		},
 		{
-			"name": "add animal",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n  \"name\": \"string\",\n  \"race\": \"string\",\n  \"birthDate\": \"2025-03-21T11:25:52.227Z\",\n  \"picture\": \"https://example.com/\",\n  \"owner\": \"https://example.com/\",\n  \"appointments\": [\n    \"https://example.com/\"\n  ]\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get Users",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NDI2NDAyNzMsImV4cCI6MTc0MjY0Mzg3Mywicm9sZXMiOlsiUk9MRV9ESVJFQ1RPUiIsIlJPTEVfVVNFUiJdLCJ1c2VybmFtZSI6ImRpcmVjdG9yQGVtYWlsLmZyIiwic3VybmFtZSI6IkRpcmVjdG9yIn0.sXefn73jpUiLeWA_bQe9_Aita-Xlw7wt0sc37lJ5lnTOI-NNQlJaSZL-DdYKKrTSOVnANrR-jGyvQ2bex1JvOl69bj863QbXrQGb1G1GaNY9ItRfKsLrk8Pgcndqsn1VMNjroIviKorMiJ3Gp5JJbPqcIOkV20Tars0uUmy5fOQethAxJUrbm8YBHhJE-ya9ZW09aD4SjFFNwSstWHueFBJ6uSQ5bvs5z4IoLMk2LOxwUEu2E7O8rB0UpljouRsmnm_mRd39z4Tq373yrBDNLM3gKlxaWKmgK48-H6qbv7EkY_AVGHQEqgf9gtxpTuHvK-swnqTwe7OGGcdIUIvnTg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{BASE_URL}/api/users",
+							"host": [
+								"{BASE_URL}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "https://127.0.0.1:8000/api/animals",
-					"protocol": "https",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"animals"
-					]
+				{
+					"name": "Get User",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NDI2NDAyNzMsImV4cCI6MTc0MjY0Mzg3Mywicm9sZXMiOlsiUk9MRV9ESVJFQ1RPUiIsIlJPTEVfVVNFUiJdLCJ1c2VybmFtZSI6ImRpcmVjdG9yQGVtYWlsLmZyIiwic3VybmFtZSI6IkRpcmVjdG9yIn0.sXefn73jpUiLeWA_bQe9_Aita-Xlw7wt0sc37lJ5lnTOI-NNQlJaSZL-DdYKKrTSOVnANrR-jGyvQ2bex1JvOl69bj863QbXrQGb1G1GaNY9ItRfKsLrk8Pgcndqsn1VMNjroIviKorMiJ3Gp5JJbPqcIOkV20Tars0uUmy5fOQethAxJUrbm8YBHhJE-ya9ZW09aD4SjFFNwSstWHueFBJ6uSQ5bvs5z4IoLMk2LOxwUEu2E7O8rB0UpljouRsmnm_mRd39z4Tq373yrBDNLM3gKlxaWKmgK48-H6qbv7EkY_AVGHQEqgf9gtxpTuHvK-swnqTwe7OGGcdIUIvnTg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{BASE_URL}/api/users/9",
+							"host": [
+								"{BASE_URL}"
+							],
+							"path": [
+								"api",
+								"users",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NDI3MjU0NDQsImV4cCI6MTc0MjcyOTA0NCwicm9sZXMiOlsiUk9MRV9ESVJFQ1RPUiIsIlJPTEVfVVNFUiJdLCJ1c2VybmFtZSI6ImRpcmVjdG9yQGVtYWlsLmZyIiwic3VybmFtZSI6IkRpcmVjdG9yIn0.hrh-iik5uklJRGJPCklkSGfUPr6OGlui-RO_Pqy3O_DYbDGYFsuanPxMt2_6Kj_vXIyFcHxqZWYY_m7lXeXIJybmu_qN11NjBcjhhP_cSFRhDpbgfT2YVCdC1IDxjPeVqRdP2hfomBDjiKdUuTvxaDPM7S8WEWYoi24rdEgzWAbF2-4d5eNOt9Os_LEa9Ua8P4LiRDooU3VB3FKf5NXyHJxyoaSffPRt73Qvyj3DriYYqlP-ShiDy5-7HSvrZaK2hpps-HplaTXndtinPy_ajE2Kz3KU30jxjhHQY0zbOJg5rrY2nagL9xVcW1f15Mb3nFTGT2XH03QH_MjITD2-2A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"test@test.fr\",\n  \"plainPassword\": \"123\",\n  \"name\": \"Test\",\n  \"surname\": \"Test\",\n  \"roles\": [\n    \"ROLE_VETERINARIAN\"\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{BASE_URL}/api/users",
+							"host": [
+								"{BASE_URL}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NDI2NDk0MTAsImV4cCI6MTc0MjY1MzAxMCwicm9sZXMiOlsiUk9MRV9ESVJFQ1RPUiIsIlJPTEVfVVNFUiJdLCJ1c2VybmFtZSI6ImRpcmVjdG9yQGVtYWlsLmZyIiwic3VybmFtZSI6IkRpcmVjdG9yIn0.Wu97XXUMQS6ia2ff33_22YTCCzQLAVqKOYlxhXuZTQRzvh_nDTg-f5HaZfvKp31jGYLBajRj83JL3WfjGwXGcwRl_MvdJHT2km5xsjbfS6m0UzqAasVj7114iXXP-WShGE2sZ_dULiUw3wuGhYWQkonSb48TPm-xySai40fde8EnJ0c-xuSBXXHoqBAL7z_4TMbouopp4sif94ZtCqFL09lYDrAcBA8c5-Vb-Tu1KTEexiRsnFD2lEskyXpxHgvmYs16zbCz46itLytiCMEUYnzUwaoECOc1shN3Skv3HdqtZwsvbObGAobPCSqj_YyUexhu-kZa4Vxm0f8oxqyiEA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/merge-patch+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"roles\": [\n    \"ROLE_VETERINARIAN\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{BASE_URL}/api/users/12",
+							"host": [
+								"{BASE_URL}"
+							],
+							"path": [
+								"api",
+								"users",
+								"12"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NDI2NTU1MzcsImV4cCI6MTc0MjY1OTEzNywicm9sZXMiOlsiUk9MRV9BU1NJU1RBTlQiLCJST0xFX1VTRVIiXSwidXNlcm5hbWUiOiJhc3Npc3RhbnRAZW1haWwuZnIiLCJzdXJuYW1lIjoiYXNzaXN0YW50In0.KwMsxUBXONiYcD9OwdZjCcaVNMWCLTJPU_ldm5y4YS4qY-tcCZFWBGSUQ59EcqCiH5W6CBnTVqoAIgo-8LiUjS4YcIHa0z3ZFtpIUtAlYcoBuJQdgkd-3JIr8ozfVNdFUz0WGDgjZoY0EhXe9fhqwaMGauGka0_CpZvIwYvVGaaCYLXvCOZoaUvnvQJa6eyI3-l6uJ7daVfQYblgWULSfEZN6jEMj2rOBUHI83_2qzdSFwUhtTCwiBzCouXEWafpkweT9zryWnVmkubWvzDIhkSQwhxseIwqBmgI3nxDLYue8DGzI0eSUZb0ejJ1omc8Td_3wbAlAerH4AZRO3ahdg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{BASE_URL}/api/users/1",
+							"host": [
+								"{BASE_URL}"
+							],
+							"path": [
+								"api",
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test User Connection",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"assistant@email.fr\",\n  \"password\": \"123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{BASE_URL}/api/auth",
+							"host": [
+								"{BASE_URL}"
+							],
+							"path": [
+								"api",
+								"auth"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			],
+			"description": "Actions liées à la table User"
 		},
 		{
-			"name": "get all appointments",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n  \"name\": \"string\",\n  \"race\": \"string\",\n  \"birthDate\": \"2025-03-21T11:25:52.227Z\",\n  \"picture\": \"https://example.com/\",\n  \"owner\": \"https://example.com/\",\n  \"appointments\": [\n    \"https://example.com/\"\n  ]\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "Clients",
+			"item": [
+				{
+					"name": "Get Clients",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{BASE_URL}/api/clients",
+							"host": [
+								"{BASE_URL}"
+							],
+							"path": [
+								"api",
+								"clients"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "https://127.0.0.1:8000/api/appointments",
-					"protocol": "https",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"appointments"
-					]
+				{
+					"name": "Get Client",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NDI2NTU1MzcsImV4cCI6MTc0MjY1OTEzNywicm9sZXMiOlsiUk9MRV9BU1NJU1RBTlQiLCJST0xFX1VTRVIiXSwidXNlcm5hbWUiOiJhc3Npc3RhbnRAZW1haWwuZnIiLCJzdXJuYW1lIjoiYXNzaXN0YW50In0.KwMsxUBXONiYcD9OwdZjCcaVNMWCLTJPU_ldm5y4YS4qY-tcCZFWBGSUQ59EcqCiH5W6CBnTVqoAIgo-8LiUjS4YcIHa0z3ZFtpIUtAlYcoBuJQdgkd-3JIr8ozfVNdFUz0WGDgjZoY0EhXe9fhqwaMGauGka0_CpZvIwYvVGaaCYLXvCOZoaUvnvQJa6eyI3-l6uJ7daVfQYblgWULSfEZN6jEMj2rOBUHI83_2qzdSFwUhtTCwiBzCouXEWafpkweT9zryWnVmkubWvzDIhkSQwhxseIwqBmgI3nxDLYue8DGzI0eSUZb0ejJ1omc8Td_3wbAlAerH4AZRO3ahdg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{BASE_URL}/api/clients/1",
+							"host": [
+								"{BASE_URL}"
+							],
+							"path": [
+								"api",
+								"clients",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Client",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NDI4MDUyNzgsImV4cCI6MTc0MjgwODg3OCwicm9sZXMiOlsiUk9MRV9BU1NJU1RBTlQiLCJST0xFX1VTRVIiXSwidXNlcm5hbWUiOiJhc3Npc3RhbnRAZW1haWwuZnIiLCJzdXJuYW1lIjoiYXNzaXN0YW50In0.Y_rjsTom8dvJrRFWR46vRD36zbGezOONIeE42jCCh0WNYUN54l15y9kGzTpXrNQfUD-LanAgG2QCrfhJynAPpL6MbUHLgD87wI8kPZWlC6t12chwVALtthFblM-VABLybfbQ5m354hAcz3wlRMgYONDXqPYRicu4Wz7eWEhRBEDZk-GYhGQM_cc5wdXyiihwbPLbu5iLHv2mdJy54ze3xxCMkzqcO0pSC2oY1-rz6gdFZVSPaLm8vdwC9BbU6VEzj3RdqAEMD3B1xvfDGDmY-P6h1G1OEpF87VRUEcSfGzvLEYuCGQAKq2mqLNqSIps8eBjjGf_OvbZTJ4S6ailZXA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fullname\": \"Client 1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{BASE_URL}/api/clients",
+							"host": [
+								"{BASE_URL}"
+							],
+							"path": [
+								"api",
+								"clients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Client",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NDI2NTU1MzcsImV4cCI6MTc0MjY1OTEzNywicm9sZXMiOlsiUk9MRV9BU1NJU1RBTlQiLCJST0xFX1VTRVIiXSwidXNlcm5hbWUiOiJhc3Npc3RhbnRAZW1haWwuZnIiLCJzdXJuYW1lIjoiYXNzaXN0YW50In0.KwMsxUBXONiYcD9OwdZjCcaVNMWCLTJPU_ldm5y4YS4qY-tcCZFWBGSUQ59EcqCiH5W6CBnTVqoAIgo-8LiUjS4YcIHa0z3ZFtpIUtAlYcoBuJQdgkd-3JIr8ozfVNdFUz0WGDgjZoY0EhXe9fhqwaMGauGka0_CpZvIwYvVGaaCYLXvCOZoaUvnvQJa6eyI3-l6uJ7daVfQYblgWULSfEZN6jEMj2rOBUHI83_2qzdSFwUhtTCwiBzCouXEWafpkweT9zryWnVmkubWvzDIhkSQwhxseIwqBmgI3nxDLYue8DGzI0eSUZb0ejJ1omc8Td_3wbAlAerH4AZRO3ahdg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/merge-patch+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fullname\": \"Aurore\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{BASE_URL}/api/clients/1",
+							"host": [
+								"{BASE_URL}"
+							],
+							"path": [
+								"api",
+								"clients",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Client",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NDI2NTU1MzcsImV4cCI6MTc0MjY1OTEzNywicm9sZXMiOlsiUk9MRV9BU1NJU1RBTlQiLCJST0xFX1VTRVIiXSwidXNlcm5hbWUiOiJhc3Npc3RhbnRAZW1haWwuZnIiLCJzdXJuYW1lIjoiYXNzaXN0YW50In0.KwMsxUBXONiYcD9OwdZjCcaVNMWCLTJPU_ldm5y4YS4qY-tcCZFWBGSUQ59EcqCiH5W6CBnTVqoAIgo-8LiUjS4YcIHa0z3ZFtpIUtAlYcoBuJQdgkd-3JIr8ozfVNdFUz0WGDgjZoY0EhXe9fhqwaMGauGka0_CpZvIwYvVGaaCYLXvCOZoaUvnvQJa6eyI3-l6uJ7daVfQYblgWULSfEZN6jEMj2rOBUHI83_2qzdSFwUhtTCwiBzCouXEWafpkweT9zryWnVmkubWvzDIhkSQwhxseIwqBmgI3nxDLYue8DGzI0eSUZb0ejJ1omc8Td_3wbAlAerH4AZRO3ahdg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fullname\": \"Aurore\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{BASE_URL}/api/clients/1",
+							"host": [
+								"{BASE_URL}"
+							],
+							"path": [
+								"api",
+								"clients",
+								"1"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			],
+			"description": "Actions liées à la table Client"
 		},
 		{
-			"name": "add appointment",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n  \"appointmentDate\": \"2025-03-21T12:47:12.675Z\",\n  \"reason\": \"string\",\n  \"animal\": \"https://example.com/\",\n  \"veterinary\": \"https://example.com/\",\n  \"assistant\": \"https://example.com/\",\n  \"state\": \"string\",\n  \"treatments\": [\n    \"https://example.com/\"\n  ]\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "Medias",
+			"item": [
+				{
+					"name": "Get Medias",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NDI2NTQ4MTgsImV4cCI6MTc0MjY1ODQxOCwicm9sZXMiOlsiUk9MRV9WRVRFUklOQVJJQU4iLCJST0xFX1VTRVIiXSwidXNlcm5hbWUiOiJ2ZXRlcmluYXJpYW5AZW1haWwuZnIiLCJzdXJuYW1lIjoiVmV0ZXJpbmFyaWFuIn0.NokPBvOhpm4l8z4DvpVfsenDJnEYCTapWzq6jmlqyq8ua7uPQjgztddJvG3V3on3cISp60ua31BSidWvLXN6zNBrMnG_kg8rPUpwkYVBF9JSX5OYOQC6CzUroSw4EDGWvcb5W6SaLnOob7Lj2xTDgg6kejE7lgxhE6HfGgfiPlVe10IGv6TsS93yr81nwrPZZ4UPgjnVk81fkZ5dcJtKOs9NmrP5Pypj7WO_klqRguehfcWqVHN8Pxtt7cGFe_NwaGUssRVVu2K1JQN_vhDT24WQ-iN1K9_rQWB0EHLIr6vWPdKCajnhhzjKdFQ6k_5QQcVS_atcIbXrF86318ke_A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{BASE_URL}/api/media",
+							"host": [
+								"{BASE_URL}"
+							],
+							"path": [
+								"api",
+								"media"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "https://127.0.0.1:8000/api/appointments",
-					"protocol": "https",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"appointments"
-					]
+				{
+					"name": "Get Media",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NDI2NTQ4MTgsImV4cCI6MTc0MjY1ODQxOCwicm9sZXMiOlsiUk9MRV9WRVRFUklOQVJJQU4iLCJST0xFX1VTRVIiXSwidXNlcm5hbWUiOiJ2ZXRlcmluYXJpYW5AZW1haWwuZnIiLCJzdXJuYW1lIjoiVmV0ZXJpbmFyaWFuIn0.NokPBvOhpm4l8z4DvpVfsenDJnEYCTapWzq6jmlqyq8ua7uPQjgztddJvG3V3on3cISp60ua31BSidWvLXN6zNBrMnG_kg8rPUpwkYVBF9JSX5OYOQC6CzUroSw4EDGWvcb5W6SaLnOob7Lj2xTDgg6kejE7lgxhE6HfGgfiPlVe10IGv6TsS93yr81nwrPZZ4UPgjnVk81fkZ5dcJtKOs9NmrP5Pypj7WO_klqRguehfcWqVHN8Pxtt7cGFe_NwaGUssRVVu2K1JQN_vhDT24WQ-iN1K9_rQWB0EHLIr6vWPdKCajnhhzjKdFQ6k_5QQcVS_atcIbXrF86318ke_A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{BASE_URL}/api/media/1",
+							"host": [
+								"{BASE_URL}"
+							],
+							"path": [
+								"api",
+								"media",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Media",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NDI4MDUyNzgsImV4cCI6MTc0MjgwODg3OCwicm9sZXMiOlsiUk9MRV9BU1NJU1RBTlQiLCJST0xFX1VTRVIiXSwidXNlcm5hbWUiOiJhc3Npc3RhbnRAZW1haWwuZnIiLCJzdXJuYW1lIjoiYXNzaXN0YW50In0.Y_rjsTom8dvJrRFWR46vRD36zbGezOONIeE42jCCh0WNYUN54l15y9kGzTpXrNQfUD-LanAgG2QCrfhJynAPpL6MbUHLgD87wI8kPZWlC6t12chwVALtthFblM-VABLybfbQ5m354hAcz3wlRMgYONDXqPYRicu4Wz7eWEhRBEDZk-GYhGQM_cc5wdXyiihwbPLbu5iLHv2mdJy54ze3xxCMkzqcO0pSC2oY1-rz6gdFZVSPaLm8vdwC9BbU6VEzj3RdqAEMD3B1xvfDGDmY-P6h1G1OEpF87VRUEcSfGzvLEYuCGQAKq2mqLNqSIps8eBjjGf_OvbZTJ4S6ailZXA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/Users/aurore/Downloads/alyssia1.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{BASE_URL}/api/media",
+							"host": [
+								"{BASE_URL}"
+							],
+							"path": [
+								"api",
+								"media"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Media",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NDI2NTQ4MTgsImV4cCI6MTc0MjY1ODQxOCwicm9sZXMiOlsiUk9MRV9WRVRFUklOQVJJQU4iLCJST0xFX1VTRVIiXSwidXNlcm5hbWUiOiJ2ZXRlcmluYXJpYW5AZW1haWwuZnIiLCJzdXJuYW1lIjoiVmV0ZXJpbmFyaWFuIn0.NokPBvOhpm4l8z4DvpVfsenDJnEYCTapWzq6jmlqyq8ua7uPQjgztddJvG3V3on3cISp60ua31BSidWvLXN6zNBrMnG_kg8rPUpwkYVBF9JSX5OYOQC6CzUroSw4EDGWvcb5W6SaLnOob7Lj2xTDgg6kejE7lgxhE6HfGgfiPlVe10IGv6TsS93yr81nwrPZZ4UPgjnVk81fkZ5dcJtKOs9NmrP5Pypj7WO_klqRguehfcWqVHN8Pxtt7cGFe_NwaGUssRVVu2K1JQN_vhDT24WQ-iN1K9_rQWB0EHLIr6vWPdKCajnhhzjKdFQ6k_5QQcVS_atcIbXrF86318ke_A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{BASE_URL}/api/media/4",
+							"host": [
+								"{BASE_URL}"
+							],
+							"path": [
+								"api",
+								"media",
+								"4"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			],
+			"description": "Actions liées à la table Media"
 		},
 		{
-			"name": "get all clients",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "Appointments",
+			"item": [
+				{
+					"name": "Get Appointments",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NDI2NTU1MzcsImV4cCI6MTc0MjY1OTEzNywicm9sZXMiOlsiUk9MRV9BU1NJU1RBTlQiLCJST0xFX1VTRVIiXSwidXNlcm5hbWUiOiJhc3Npc3RhbnRAZW1haWwuZnIiLCJzdXJuYW1lIjoiYXNzaXN0YW50In0.KwMsxUBXONiYcD9OwdZjCcaVNMWCLTJPU_ldm5y4YS4qY-tcCZFWBGSUQ59EcqCiH5W6CBnTVqoAIgo-8LiUjS4YcIHa0z3ZFtpIUtAlYcoBuJQdgkd-3JIr8ozfVNdFUz0WGDgjZoY0EhXe9fhqwaMGauGka0_CpZvIwYvVGaaCYLXvCOZoaUvnvQJa6eyI3-l6uJ7daVfQYblgWULSfEZN6jEMj2rOBUHI83_2qzdSFwUhtTCwiBzCouXEWafpkweT9zryWnVmkubWvzDIhkSQwhxseIwqBmgI3nxDLYue8DGzI0eSUZb0ejJ1omc8Td_3wbAlAerH4AZRO3ahdg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{BASE_URL}/api/appointments",
+							"host": [
+								"{BASE_URL}"
+							],
+							"path": [
+								"api",
+								"appointments"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "https://127.0.0.1:8000/api/clients",
-					"protocol": "https",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"clients"
-					]
+				{
+					"name": "Get Appointment",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{BASE_URL}/api/appointments/1",
+							"host": [
+								"{BASE_URL}"
+							],
+							"path": [
+								"api",
+								"appointments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Appointment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NDI4MDUyNzgsImV4cCI6MTc0MjgwODg3OCwicm9sZXMiOlsiUk9MRV9BU1NJU1RBTlQiLCJST0xFX1VTRVIiXSwidXNlcm5hbWUiOiJhc3Npc3RhbnRAZW1haWwuZnIiLCJzdXJuYW1lIjoiYXNzaXN0YW50In0.Y_rjsTom8dvJrRFWR46vRD36zbGezOONIeE42jCCh0WNYUN54l15y9kGzTpXrNQfUD-LanAgG2QCrfhJynAPpL6MbUHLgD87wI8kPZWlC6t12chwVALtthFblM-VABLybfbQ5m354hAcz3wlRMgYONDXqPYRicu4Wz7eWEhRBEDZk-GYhGQM_cc5wdXyiihwbPLbu5iLHv2mdJy54ze3xxCMkzqcO0pSC2oY1-rz6gdFZVSPaLm8vdwC9BbU6VEzj3RdqAEMD3B1xvfDGDmY-P6h1G1OEpF87VRUEcSfGzvLEYuCGQAKq2mqLNqSIps8eBjjGf_OvbZTJ4S6ailZXA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"appointmentDate\": \"2025-03-21T12:47:12.675Z\",\n  \"reason\": \"Annual checkup\",\n  \"animal\": \"/api/animals/1\",\n  \"assistant\": \"/api/users/3\",\n  \"veterinary\": \"/api/users/2\",\n  \"state\": \"En cours\",\n  \"paymentStatus\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{BASE_URL}/api/appointments",
+							"host": [
+								"{BASE_URL}"
+							],
+							"path": [
+								"api",
+								"appointments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Appointment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NDI4MDU3NjYsImV4cCI6MTc0MjgwOTM2Niwicm9sZXMiOlsiUk9MRV9BU1NJU1RBTlQiLCJST0xFX1VTRVIiXSwidXNlcm5hbWUiOiJhc3Npc3RhbnRAZW1haWwuZnIiLCJzdXJuYW1lIjoiYXNzaXN0YW50In0.Sqe09r1Z4bkXCZQgNkwrDzwDSyz8mgPQE6KfILT-BDt7ViB7b3_G6bZU6iqaPgSvP0G06ha0jaZJowoW13hy6Tyw2zA5MUl4b7gBZHf05Ljm9b3vnfhCYLMEjocGPJv_cbsbu4_tfLZf2e_pkcEYHtAX-xwNc5XQVlSosczjEbvqZG7SvMyW_bzIl9KyomKWbvzApQH4PD2MpLPijDtnC7PTxEfNWhKCq3UVjHkCqkxtrYmVE_obrgpMoV5JKkWWa1jtms5nLWYw4Mlgfe3-z49Dv9CFGeahsNEL3TmdugF_sxUDkm-8lQLgCEKMBsEAL7WWe6mUa-5gU13x1ukeKQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/merge-patch+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"state\": \"En cours\",\n    \"paymentStatus\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{BASE_URL}/api/appointments/1",
+							"host": [
+								"{BASE_URL}"
+							],
+							"path": [
+								"api",
+								"appointments",
+								"1"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Appointment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NDI2NTQ4MTgsImV4cCI6MTc0MjY1ODQxOCwicm9sZXMiOlsiUk9MRV9WRVRFUklOQVJJQU4iLCJST0xFX1VTRVIiXSwidXNlcm5hbWUiOiJ2ZXRlcmluYXJpYW5AZW1haWwuZnIiLCJzdXJuYW1lIjoiVmV0ZXJpbmFyaWFuIn0.NokPBvOhpm4l8z4DvpVfsenDJnEYCTapWzq6jmlqyq8ua7uPQjgztddJvG3V3on3cISp60ua31BSidWvLXN6zNBrMnG_kg8rPUpwkYVBF9JSX5OYOQC6CzUroSw4EDGWvcb5W6SaLnOob7Lj2xTDgg6kejE7lgxhE6HfGgfiPlVe10IGv6TsS93yr81nwrPZZ4UPgjnVk81fkZ5dcJtKOs9NmrP5Pypj7WO_klqRguehfcWqVHN8Pxtt7cGFe_NwaGUssRVVu2K1JQN_vhDT24WQ-iN1K9_rQWB0EHLIr6vWPdKCajnhhzjKdFQ6k_5QQcVS_atcIbXrF86318ke_A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{BASE_URL}/api/appointment/4",
+							"host": [
+								"{BASE_URL}"
+							],
+							"path": [
+								"api",
+								"appointment",
+								"4"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			],
+			"description": "Actions liées à la table Appointment"
 		},
 		{
-			"name": "add client",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"fullname\": \"Aurore\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "Treatments",
+			"item": [
+				{
+					"name": "Get Treaments",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{BASE_URL}/api/treatments",
+							"host": [
+								"{BASE_URL}"
+							],
+							"path": [
+								"api",
+								"treatments"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "https://127.0.0.1:8000/api/clients",
-					"protocol": "https",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"clients"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "get all medias",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
+				{
+					"name": "Get Treament",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{BASE_URL}/api/treatments/1",
+							"host": [
+								"{BASE_URL}"
+							],
+							"path": [
+								"api",
+								"treatments",
+								"1"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "https://127.0.0.1:8000/api/media",
-					"protocol": "https",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"media"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "add media",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
+				{
+					"name": "Add Treament",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NDI4MDU1ODYsImV4cCI6MTc0MjgwOTE4Niwicm9sZXMiOlsiUk9MRV9WRVRFUklOQVJJQU4iLCJST0xFX1VTRVIiXSwidXNlcm5hbWUiOiJ2ZXRlcmluYXJpYW5AZW1haWwuZnIiLCJzdXJuYW1lIjoiVmV0ZXJpbmFyaWFuIn0.lmvyqa53ESqn871UfSu7jnnRRIOd8tG1q2lSTAg9YwFgKtU0GlVwAjc7TXOWP0n3UQSlzLaqlo8Ja-oAvhE-aVSmHRJHroyEilqV-jIV4-Zl9SBG1c3bdrlDwwhsyY3_dQcDRu5KRfd07whm2w5WkfECM1rJsLmr8rFXpw-rpStjY1Gey5C-78VYuMLUN5wvKzDNz1f5030MXEui1rkFuBz_UIhHbsMpqWmE08FX1irFwNvt0MXc2AJ-wXc6ZKUPG-WKrF3nLcfgOYUP9npNk5Jq7D5qJjIXCgdplZUK_fslRc-IO-8nzlf16rNPawAeAFS9urxESv1JmeaSLgG-jQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Traitement 1\",\n    \"price\": 10.99,\n    \"duration\": \"3 mois\",\n    \"appointments\" : [\n        \"/api/appointments/1\"\n        ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{BASE_URL}/api/treatments",
+							"host": [
+								"{BASE_URL}"
+							],
+							"path": [
+								"api",
+								"treatments"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "https://127.0.0.1:8000/api/media",
-					"protocol": "https",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"media"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "get all treaments",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
+				{
+					"name": "Update Treatment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NDI2NDAyNzMsImV4cCI6MTc0MjY0Mzg3Mywicm9sZXMiOlsiUk9MRV9ESVJFQ1RPUiIsIlJPTEVfVVNFUiJdLCJ1c2VybmFtZSI6ImRpcmVjdG9yQGVtYWlsLmZyIiwic3VybmFtZSI6IkRpcmVjdG9yIn0.sXefn73jpUiLeWA_bQe9_Aita-Xlw7wt0sc37lJ5lnTOI-NNQlJaSZL-DdYKKrTSOVnANrR-jGyvQ2bex1JvOl69bj863QbXrQGb1G1GaNY9ItRfKsLrk8Pgcndqsn1VMNjroIviKorMiJ3Gp5JJbPqcIOkV20Tars0uUmy5fOQethAxJUrbm8YBHhJE-ya9ZW09aD4SjFFNwSstWHueFBJ6uSQ5bvs5z4IoLMk2LOxwUEu2E7O8rB0UpljouRsmnm_mRd39z4Tq373yrBDNLM3gKlxaWKmgK48-H6qbv7EkY_AVGHQEqgf9gtxpTuHvK-swnqTwe7OGGcdIUIvnTg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/merge-patch+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"roles\": [\n    \"ROLE_ASSISTANT\"\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{BASE_URL}/api/treatments/7",
+							"host": [
+								"{BASE_URL}"
+							],
+							"path": [
+								"api",
+								"treatments",
+								"7"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "https://127.0.0.1:8000/api/treatments",
-					"protocol": "https",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"treatments"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "add treaments",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
+				{
+					"name": "Delete Treatment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NDI2NTU1MzcsImV4cCI6MTc0MjY1OTEzNywicm9sZXMiOlsiUk9MRV9BU1NJU1RBTlQiLCJST0xFX1VTRVIiXSwidXNlcm5hbWUiOiJhc3Npc3RhbnRAZW1haWwuZnIiLCJzdXJuYW1lIjoiYXNzaXN0YW50In0.KwMsxUBXONiYcD9OwdZjCcaVNMWCLTJPU_ldm5y4YS4qY-tcCZFWBGSUQ59EcqCiH5W6CBnTVqoAIgo-8LiUjS4YcIHa0z3ZFtpIUtAlYcoBuJQdgkd-3JIr8ozfVNdFUz0WGDgjZoY0EhXe9fhqwaMGauGka0_CpZvIwYvVGaaCYLXvCOZoaUvnvQJa6eyI3-l6uJ7daVfQYblgWULSfEZN6jEMj2rOBUHI83_2qzdSFwUhtTCwiBzCouXEWafpkweT9zryWnVmkubWvzDIhkSQwhxseIwqBmgI3nxDLYue8DGzI0eSUZb0ejJ1omc8Td_3wbAlAerH4AZRO3ahdg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{BASE_URL}/api/treatments/1",
+							"host": [
+								"{BASE_URL}"
+							],
+							"path": [
+								"api",
+								"treatments",
+								"1"
+							]
 						}
-					}
-				},
-				"url": {
-					"raw": "https://127.0.0.1:8000/api/treatments",
-					"protocol": "https",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"treatments"
-					]
+					},
+					"response": []
 				}
-			},
-			"response": []
-		},
-		{
-			"name": "get all users",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "https://127.0.0.1:8000/api/users",
-					"protocol": "https",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"users"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "add user",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n  \"email\": \"assistant.salpetriere@ymail.fr\",\n  \"roles\": [\n    \"ROLE_ASSISTANT\"\n  ],\n  \"password\": \"123soleil\",\n  \"name\": \"Margerite\",\n  \"surname\": \"De La paix\",\n  \n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "https://127.0.0.1:8000/api/users",
-					"protocol": "https",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"users"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "update user",
-			"request": {
-				"method": "PATCH",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n  \"email\": \"assistant.salpetriere@ymail.fr\",\n  \"roles\": [\n    \"ROLE_ASSISTANT\"\n  ],\n  \"password\": \"123soleil\",\n  \"name\": \"Margerite\",\n  \"surname\": \"De La paix\",\n  \n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "https://127.0.0.1:8000/api/users",
-					"protocol": "https",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"users"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "connexion",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n  \"email\": \"veterinary.salpetriere@ymail.fr\",\n  \"plainPassword\": \"123soleil\",\n  \n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "https://127.0.0.1:8000/api/auth",
-					"protocol": "https",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"auth"
-					]
-				}
-			},
-			"response": []
+			],
+			"description": "Actions liées à la table Treatment"
 		}
 	]
 }
